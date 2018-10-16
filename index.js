@@ -78,7 +78,7 @@ function sortByName(foodTrucks) {
  */
 function printResults(foodTrucks) {
   foodTrucks.forEach(foodTruck => {
-    console.log(foodTruck.applicant + "\t\t" + foodTruck.location);
+    console.log(`${foodTruck.applicant} \t\t ${foodTruck.location}`);
   });
 }
 /**
@@ -124,6 +124,9 @@ function main() {
     )(data);
     console.log("Name \t\t Address");
     awaitCommand(foodTrucks);
+  })
+  .catch((err) => {
+    console.warn('There was an error getting the data');
   });
 }
 main();
